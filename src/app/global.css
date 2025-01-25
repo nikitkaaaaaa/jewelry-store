@@ -1,5 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.container {
+  max-width: 1250px;
+  margin: auto;
+}
+
+.icons {
+  transition: 0.25s;
+}
+
+.icons:hover {
+  fill: #a18a68;
+  cursor: pointer;
+  transition: 0.25s;
 }
