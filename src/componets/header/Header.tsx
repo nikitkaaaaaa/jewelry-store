@@ -5,9 +5,9 @@ import CartIcon from "../../assets/CartIcon";
 import SearchIcon from "../../assets/SearchIcon";
 
 const Header = () => {
-  const icons: JSX.Element[] = [<SearchIcon />, <CartIcon />, <SearchIcon />];
+  const icons: JSX.Element[] = [<SearchIcon />, <CartIcon />, <SearchIcon />]; // иконки
 
-  const menuItems: string[] = ["Магазин", "Заказы", "О нас"];
+  const menuItems: string[] = ["Магазин", "Заказы", "О нас"]; // элементы меню
 
   const [selectedMenuItem, setSelectedMenuItem] = useState<number>(0);
 

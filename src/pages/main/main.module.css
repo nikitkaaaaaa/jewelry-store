@@ -1,0 +1,155 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.block_count_products {
+  margin-top: 96px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count_products {
+  color: #707070;
+  font-size: 16px;
+}
+
+.shop_text {
+  font-size: 33px;
+  font-weight: 500;
+}
+
+.filters {
+  width: 25%;
+  margin-right: 36px;
+}
+
+.filter_color_name,
+.filter_type_jewelery_name,
+.filter_price_name {
+  font-size: 20px;
+}
+
+.filter_type_jewelery_name,
+.filter_price_name {
+  margin-top: 48px;
+}
+
+.filter_color,
+.filter_type_jewelery {
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  margin-top: 24px;
+}
+
+.filter_price {
+  margin-top: 24px;
+}
+
+.block_inputs_filter_price {
+  display: flex;
+}
+
+.block_inputs_filter_price input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.price_from input,
+.price_to input {
+  width: 100%;
+  padding: 12px 36px 12px 12px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.price_from,
+.price_to {
+  position: relative;
+}
+
+.price_from {
+  margin-right: 16px;
+}
+
+.clear_price_icon {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transform: translateY(50%);
+}
+
+.filter_color,
+.filter_type_jewelery:hover {
+  cursor: pointer;
+}
+
+.filter_color.active,
+.filter_type_jewelery.active {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.current_color_filter,
+.current_type_jewelery_filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  align-items: center;
+}
+
+.type_color_filter,
+.type_jewelery_filter {
+  border-left: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.type_color_filter,
+.type_jewelery_filter.active {
+  border-radius: 0px 0px 4px 4px;
+}
+
+.current_type_color_filter,
+.current_type_jewelery_filter {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.current_type_color_filter:hover {
+  background-color: #efefef;
+}
+
+.current_type_jewelery_filter:hover {
+  background-color: #efefef;
+}
+
+.block_icons_filter {
+  display: flex;
+  align-items: center;
+}
+
+.apply_filters {
+  margin-top: 24px;
+  border: 1px solid #efefef;
+  padding: 12px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.products {
+  width: 75%;
+  border: 1px solid;
+}
