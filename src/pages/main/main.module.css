@@ -27,6 +27,11 @@
   margin-right: 36px;
 }
 
+.block_filters {
+  position: sticky;
+  top: 5%;
+}
+
 .filter_color_name,
 .filter_type_jewelery_name,
 .filter_price_name {
@@ -151,5 +156,7 @@ input[type="number"] {
 
 .products {
   width: 75%;
-  border: 1px solid;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(3, 1fr);
 }

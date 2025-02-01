@@ -4,21 +4,21 @@ import style from "../main.module.css";
 import ArrowIcon from "../../../assets/ArrowIcon";
 import ResetCurrentFilter from "../../../assets/ResetCurrentFilter";
 
-const FilterColor = () => {
+const FilterMaterial = () => {
   const [openFilter, setOpenFilter] = useState<boolean>(false);
 
-  const colorsJewelery: string[] = ["Золотой", "Серебро", "Белый"];
+  const materialJewelery: string[] = ["Золото", "Серебро", "Белое золото"];
 
-  const [currentColor, setCurrentColor] = useState<number | null>(null);
+  const [currentMaterial, setCurrentMaterial] = useState<number | null>(null);
 
   const handleSelectColor = (index: number): void => {
-    setCurrentColor(index);
+    setCurrentMaterial(index);
     setOpenFilter(false);
   }; // функция для выборки цвета
 
   return (
     <>
-      <div className={style.filter_color_name}>Фильтр по цвету</div>
+      <div className={style.filter_color_name}>Фильтр по материалу </div>
       <form>
         <div className={`${style.filter_color} ${openFilter && style.active}`}>
           <div
@@ -26,15 +26,15 @@ const FilterColor = () => {
             onClick={() => setOpenFilter((prev) => !prev)}
           >
             <div>
-              {currentColor === null
+              {currentMaterial === null
                 ? "Не выбран"
-                : colorsJewelery[currentColor]}
+                : materialJewelery[currentMaterial]}
             </div>
             <div className={style.block_icons_filter}>
-              {currentColor !== null && (
+              {currentMaterial !== null && (
                 <span
                   style={{ marginBottom: "4px" }}
-                  onClick={() => setCurrentColor(null)}
+                  onClick={() => setCurrentMaterial(null)}
                 >
                   <ResetCurrentFilter />
                 </span>
@@ -50,7 +50,7 @@ const FilterColor = () => {
               openFilter && style.active
             }`}
           >
-            {colorsJewelery.map((item, index) => (
+            {materialJewelery.map((item, index) => (
               <div
                 key={index}
                 className={style.current_type_color_filter}
@@ -66,4 +66,4 @@ const FilterColor = () => {
   );
 };
 
-export default FilterColor;
+export default FilterMaterial;
