@@ -1,13 +1,23 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import style from "./header.module.css";
 import CartIcon from "../../assets/CartIcon";
 import SearchIcon from "../../assets/SearchIcon";
+import FavoritesIcon from "../../assets/FavoritesIcon";
+import routes from "../../routes/routes";
 
 const Header = () => {
-  const icons: JSX.Element[] = [<SearchIcon />, <CartIcon />, <SearchIcon />]; // иконки
+  const icons: JSX.Element[] = [
+    <SearchIcon />,
+    <CartIcon />,
+    <FavoritesIcon />,
+  ]; // иконки
 
-  const menuItems: string[] = ["Магазин", "Заказы", "О нас"]; // элементы меню
+  const menuItems: { title: string; route: string }[] = [
+    { title: "Магазин", route: routes.main },
+    { title: "О нас", route: routes.blog },
+  ];
 
   const [selectedMenuItem, setSelectedMenuItem] = useState<number>(0);
 
@@ -18,14 +28,17 @@ const Header = () => {
         <div style={{ display: "flex", alignItems: "center" }}>
           <ul className={style.menu_header}>
             {menuItems.map((item, index) => (
-              <li
+              <Link
+                to={item.route}
                 key={index}
                 className={`${style.menu_item} ${
                   index === selectedMenuItem && style.active
                 }`}
               >
-                <span onClick={() => setSelectedMenuItem(index)}>{item}</span>
-              </li>
+                <span onClick={() => setSelectedMenuItem(index)}>
+                  {item.title}
+                </span>
+              </Link>
             ))}
           </ul>
 

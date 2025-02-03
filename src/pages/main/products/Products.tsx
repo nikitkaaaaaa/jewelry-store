@@ -2,11 +2,13 @@ import React from "react";
 
 import style from "../main.module.css";
 import Card from "../../../componets/card/Card";
-import { useGetProductsQuery } from "../../../api/productsApi/productsApi";
+import Iproducts from "../../../api/productsApi/Iproducts";
 
-const Products = () => {
-  const { data: products = [] } = useGetProductsQuery();
+interface ProductsProps {
+  products: Iproducts[];
+}
 
+const Products = ({ products }: ProductsProps) => {
   return (
     <div className={style.products}>
       {products.map((item) => (
