@@ -8,10 +8,16 @@ import FavoritesIcon from "../../assets/FavoritesIcon";
 import routes from "../../routes/routes";
 
 const Header = () => {
-  const icons: JSX.Element[] = [
-    <SearchIcon />,
-    <CartIcon />,
-    <FavoritesIcon />,
+  // const icons: JSX.Element[] = [
+  //   <SearchIcon />,
+  //   <CartIcon />,
+  //   <FavoritesIcon />,
+  // ]; // иконки
+
+  const icons = [
+    { icon: <SearchIcon />, route: "" },
+    { icon: <CartIcon />, route: "" },
+    { icon: <FavoritesIcon />, route: routes.favorites },
   ]; // иконки
 
   const menuItems: { title: string; route: string }[] = [
@@ -29,15 +35,14 @@ const Header = () => {
           <ul className={style.menu_header}>
             {menuItems.map((item, index) => (
               <Link
-                to={item.route}
                 key={index}
+                to={item.route}
+                onClick={() => setSelectedMenuItem(index)}
                 className={`${style.menu_item} ${
                   index === selectedMenuItem && style.active
                 }`}
               >
-                <span onClick={() => setSelectedMenuItem(index)}>
-                  {item.title}
-                </span>
+                {item.title}
               </Link>
             ))}
           </ul>
@@ -46,9 +51,9 @@ const Header = () => {
 
           <div className={style.block_icons}>
             {icons.map((item, index) => (
-              <span className={style.icon_header} key={index}>
-                {item}
-              </span>
+              <Link to={item.route} className={style.icon_header} key={index}>
+                {item.icon}
+              </Link>
             ))}
           </div>
         </div>
