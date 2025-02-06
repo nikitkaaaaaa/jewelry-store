@@ -10,6 +10,7 @@ const Cart = () => {
   const rotateToProductsPage = () => {
     navigate(routes.main);
   };
+
   return (
     <div className={style.cart}>
       <div className={style.title_cart}>Корзина</div>

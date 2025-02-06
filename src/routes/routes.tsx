@@ -1,8 +1,9 @@
 const routes = {
   main: "/",
-  blog: "/blog",
+  aboutUs: "/aboutUs",
   favorites: "/favorites",
   cart: "/cart",
+  notFoundPage: "*",
 
   facebook: "/https://www.facebook.com/",
   instagram: "/https://www.instagram.com/",

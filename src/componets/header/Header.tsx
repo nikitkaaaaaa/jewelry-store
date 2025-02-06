@@ -15,7 +15,7 @@ const Header = () => {
 
   const menuItems: { title: string; route: string }[] = [
     { title: "Магазин", route: routes.main },
-    { title: "О нас", route: routes.blog },
+    { title: "О нас", route: routes.aboutUs },
   ]; // элементы меню
 
   const [selectedMenuItem, setSelectedMenuItem] = useState<number>(0);
