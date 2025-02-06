@@ -8,22 +8,15 @@ import FavoritesIcon from "../../assets/FavoritesIcon";
 import routes from "../../routes/routes";
 
 const Header = () => {
-  // const icons: JSX.Element[] = [
-  //   <SearchIcon />,
-  //   <CartIcon />,
-  //   <FavoritesIcon />,
-  // ]; // иконки
-
-  const icons = [
-    { icon: <SearchIcon />, route: "" },
-    { icon: <CartIcon />, route: "" },
+  const icons: { icon: JSX.Element; route: string }[] = [
+    { icon: <CartIcon />, route: routes.cart },
     { icon: <FavoritesIcon />, route: routes.favorites },
   ]; // иконки
 
   const menuItems: { title: string; route: string }[] = [
     { title: "Магазин", route: routes.main },
     { title: "О нас", route: routes.blog },
-  ];
+  ]; // элементы меню
 
   const [selectedMenuItem, setSelectedMenuItem] = useState<number>(0);
 
@@ -50,6 +43,9 @@ const Header = () => {
           <span className={style.header_seperator}></span>
 
           <div className={style.block_icons}>
+            <div className={style.icon_header}>
+              <SearchIcon />
+            </div>
             {icons.map((item, index) => (
               <Link to={item.route} className={style.icon_header} key={index}>
                 {item.icon}
